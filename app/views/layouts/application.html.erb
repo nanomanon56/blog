@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SimpleBlog</title>
+    <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' %>
+
+
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <button type="button" class="navbar-toggle collapsed"
+        data-toggle= "collaspe" data-target= "#navebar"
+        aria-expanded= "false" aria-controls= "navebar">
+        <span class="sr-only">Toggle navagation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>          
+        </button>
+        <div id="navebar" class="collapse navebar-collapse">
+        <ul class="nav navebar-nav"> 
+          <li><%= link_to "Home", home_path %></li>
+        </ul>
+        <ul class="nav navebar-nav navebar-right"> 
+          <li><%= link_to "Create Post", new_post_path %></li>
+        </ul> 
+      </div>
+        </div>
+    </nav>
+
+    <div class="container">
+    <%= yield %>
+    </div>
+  </body>
+</html>
